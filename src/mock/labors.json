@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Plowing",
+    "description": "Initial soil preparation for planting",
+    "duration": 4,
+    "difficulty": "Medium",
+    "season": "Spring",
+    "equipment": ["Tractor", "Plow"],
+    "cost_per_hour": 25
+  },
+  {
+    "id": 2,
+    "name": "Planting",
+    "description": "Sowing seeds in prepared soil",
+    "duration": 6,
+    "difficulty": "Low",
+    "season": "Spring",
+    "equipment": ["Planter", "Seeds"],
+    "cost_per_hour": 30
+  },
+  {
+    "id": 3,
+    "name": "Irrigation",
+    "description": "Watering crops during dry periods",
+    "duration": 3,
+    "difficulty": "Low",
+    "season": "Summer",
+    "equipment": ["Irrigation System", "Water"],
+    "cost_per_hour": 15
+  },
+  {
+    "id": 4,
+    "name": "Harvesting",
+    "description": "Collecting mature crops",
+    "duration": 8,
+    "difficulty": "High",
+    "season": "Fall",
+    "equipment": ["Harvester", "Storage Containers"],
+    "cost_per_hour": 45
+  },
+  {
+    "id": 5,
+    "name": "Pest Control",
+    "description": "Applying pesticides and monitoring crop health",
+    "duration": 2,
+    "difficulty": "Medium",
+    "season": "All",
+    "equipment": ["Sprayer", "Pesticides"],
+    "cost_per_hour": 35
+  }
+]

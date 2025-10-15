@@ -1,0 +1,91 @@
+{
+  "mcpServers": {
+    "agromcp": {
+      "command": "node",
+      "args": ["src/server.js"],
+      "env": {
+        "PORT": "3000"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "get_labors",
+      "description": "Get all agricultural labor activities",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "description": "Optional specific labor ID"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_costs",
+      "description": "Get farm cost records and expenses",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "description": "Optional specific cost ID"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_workers",
+      "description": "Get farm workers and staff information",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "description": "Optional specific worker ID"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_crops",
+      "description": "Get crop information and status",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "description": "Optional specific crop ID"
+          }
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "agromcp://labors",
+      "name": "Labor Activities",
+      "description": "Agricultural labor activities and operations",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "agromcp://costs",
+      "name": "Cost Records",
+      "description": "Farm expenses and cost tracking",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "agromcp://workers",
+      "name": "Workers",
+      "description": "Farm workers and staff information",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "agromcp://crops",
+      "name": "Crops",
+      "description": "Crop information and growing status",
+      "mimeType": "application/json"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Juan Pérez",
+    "position": "Farm Manager",
+    "experience_years": 15,
+    "specialization": ["Crop Management", "Equipment Operation"],
+    "hourly_rate": 35,
+    "availability": "Full-time",
+    "contact": "juan.perez@email.com",
+    "skills": ["Tractor Operation", "Crop Planning", "Team Leadership"]
+  },
+  {
+    "id": 2,
+    "name": "María García",
+    "position": "Agricultural Technician",
+    "experience_years": 8,
+    "specialization": ["Soil Analysis", "Pest Management"],
+    "hourly_rate": 28,
+    "availability": "Full-time",
+    "contact": "maria.garcia@email.com",
+    "skills": ["Soil Testing", "Pesticide Application", "Data Analysis"]
+  },
+  {
+    "id": 3,
+    "name": "Carlos López",
+    "position": "Equipment Operator",
+    "experience_years": 12,
+    "specialization": ["Heavy Machinery", "Irrigation Systems"],
+    "hourly_rate": 30,
+    "availability": "Full-time",
+    "contact": "carlos.lopez@email.com",
+    "skills": ["Tractor Operation", "Harvester Operation", "Irrigation Setup"]
+  },
+  {
+    "id": 4,
+    "name": "Ana Rodríguez",
+    "position": "Seasonal Worker",
+    "experience_years": 3,
+    "specialization": ["Planting", "Harvesting"],
+    "hourly_rate": 18,
+    "availability": "Seasonal",
+    "contact": "ana.rodriguez@email.com",
+    "skills": ["Manual Planting", "Crop Harvesting", "Field Maintenance"]
+  },
+  {
+    "id": 5,
+    "name": "Roberto Silva",
+    "position": "Maintenance Specialist",
+    "experience_years": 10,
+    "specialization": ["Equipment Repair", "Infrastructure"],
+    "hourly_rate": 32,
+    "availability": "Part-time",
+    "contact": "roberto.silva@email.com",
+    "skills": ["Equipment Repair", "Electrical Work", "Welding"]
+  }
+]

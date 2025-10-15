@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "category": "Labor",
+    "description": "Seasonal farm workers",
+    "amount": 2500,
+    "currency": "USD",
+    "date": "2024-03-15",
+    "farm_section": "North Field"
+  },
+  {
+    "id": 2,
+    "category": "Equipment",
+    "description": "Tractor maintenance",
+    "amount": 800,
+    "currency": "USD",
+    "date": "2024-03-20",
+    "farm_section": "Equipment Shed"
+  },
+  {
+    "id": 3,
+    "category": "Seeds",
+    "description": "Corn seeds for planting",
+    "amount": 1200,
+    "currency": "USD",
+    "date": "2024-04-01",
+    "farm_section": "East Field"
+  },
+  {
+    "id": 4,
+    "category": "Fertilizer",
+    "description": "Organic fertilizer application",
+    "amount": 600,
+    "currency": "USD",
+    "date": "2024-04-10",
+    "farm_section": "South Field"
+  },
+  {
+    "id": 5,
+    "category": "Utilities",
+    "description": "Irrigation water bill",
+    "amount": 350,
+    "currency": "USD",
+    "date": "2024-04-15",
+    "farm_section": "All Fields"
+  },
+  {
+    "id": 6,
+    "category": "Pesticides",
+    "description": "Organic pest control",
+    "amount": 450,
+    "currency": "USD",
+    "date": "2024-05-01",
+    "farm_section": "West Field"
+  }
+]

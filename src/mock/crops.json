@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Corn",
+    "variety": "Hybrid Sweet Corn",
+    "planting_date": "2024-04-15",
+    "expected_harvest": "2024-08-15",
+    "field_location": "North Field",
+    "area_acres": 50,
+    "status": "Growing",
+    "yield_estimate": 150,
+    "unit": "bushels_per_acre"
+  },
+  {
+    "id": 2,
+    "name": "Tomatoes",
+    "variety": "Beefsteak",
+    "planting_date": "2024-03-20",
+    "expected_harvest": "2024-07-20",
+    "field_location": "Greenhouse A",
+    "area_acres": 2,
+    "status": "Flowering",
+    "yield_estimate": 25,
+    "unit": "tons_per_acre"
+  },
+  {
+    "id": 3,
+    "name": "Wheat",
+    "variety": "Winter Wheat",
+    "planting_date": "2023-10-15",
+    "expected_harvest": "2024-06-20",
+    "field_location": "South Field",
+    "area_acres": 75,
+    "status": "Ready for Harvest",
+    "yield_estimate": 80,
+    "unit": "bushels_per_acre"
+  },
+  {
+    "id": 4,
+    "name": "Soybeans",
+    "variety": "Roundup Ready",
+    "planting_date": "2024-05-01",
+    "expected_harvest": "2024-09-15",
+    "field_location": "East Field",
+    "area_acres": 40,
+    "status": "Germinating",
+    "yield_estimate": 45,
+    "unit": "bushels_per_acre"
+  },
+  {
+    "id": 5,
+    "name": "Lettuce",
+    "variety": "Romaine",
+    "planting_date": "2024-04-01",
+    "expected_harvest": "2024-06-01",
+    "field_location": "Greenhouse B",
+    "area_acres": 1,
+    "status": "Harvesting",
+    "yield_estimate": 800,
+    "unit": "heads_per_acre"
+  }
+]

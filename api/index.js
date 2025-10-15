@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
+const fs = require('fs');
 
 const laborsRoutes = require('../src/routes/labors');
 const costsRoutes = require('../src/routes/costs');
@@ -19,12 +21,12 @@ app.use('/api/workers', workersRoutes);
 app.use('/api/crops', cropsRoutes);
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (_req, res) => {
   res.json({ status: 'OK', message: 'AgroMCP server is running' });
 });
 
 // API root endpoint
-app.get('/api', (req, res) => {
+app.get('/api', (_req, res) => {
   res.json({
     message: 'Welcome to AgroMCP - Model Context Protocol for Agricultural Data',
     endpoints: [
@@ -38,186 +40,10 @@ app.get('/api', (req, res) => {
 });
 
 // Root endpoint - serve documentation
-app.get('/', (req, res) => {
-  res.send(`
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroMCP - Model Context Protocol for Agriculture</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.6;
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        header {
-            margin-bottom: 60px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 20px;
-        }
-        h1 {
-            font-size: 2em;
-            font-weight: 400;
-            color: #4ade80;
-            margin-bottom: 8px;
-        }
-        .subtitle {
-            color: #888;
-            font-size: 0.9em;
-        }
-        h2 {
-            font-size: 1.2em;
-            font-weight: 400;
-            color: #fff;
-            margin: 40px 0 20px 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85em;
-        }
-        .endpoint {
-            background: #111;
-            border: 1px solid #222;
-            border-radius: 4px;
-            padding: 16px;
-            margin-bottom: 12px;
-            transition: border-color 0.2s;
-        }
-        .endpoint:hover {
-            border-color: #4ade80;
-        }
-        .endpoint-method {
-            display: inline-block;
-            background: #1a1a1a;
-            color: #4ade80;
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-size: 0.75em;
-            font-weight: 600;
-            margin-right: 12px;
-        }
-        .endpoint-path {
-            color: #fff;
-            font-weight: 500;
-        }
-        .endpoint-path a {
-            color: #4ade80;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-        .endpoint-path a:hover {
-            opacity: 0.7;
-        }
-        .endpoint-desc {
-            color: #666;
-            font-size: 0.85em;
-            margin-top: 8px;
-            line-height: 1.5;
-        }
-        footer {
-            margin-top: 80px;
-            padding-top: 20px;
-            border-top: 1px solid #222;
-            color: #555;
-            font-size: 0.8em;
-            text-align: center;
-        }
-        .info {
-            background: #111;
-            border-left: 3px solid #4ade80;
-            padding: 16px;
-            margin-bottom: 30px;
-            color: #888;
-            font-size: 0.9em;
-        }
-        code {
-            background: #1a1a1a;
-            padding: 2px 6px;
-            border-radius: 3px;
-            color: #4ade80;
-            font-size: 0.9em;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>AgroMCP</h1>
-        <p class="subtitle">Model Context Protocol for Agricultural Data</p>
-    </header>
-
-    <main>
-        <div class="info">
-            Un servidor MCP de referencia que expone datos agrícolas a través de endpoints REST simples.
-            Diseñado para conectar información de operaciones agrícolas con modelos de IA.
-        </div>
-
-        <h2>Endpoints</h2>
-
-        <div class="endpoint">
-            <div>
-                <span class="endpoint-method">GET</span>
-                <span class="endpoint-path"><a href="/api">/api</a></span>
-            </div>
-            <div class="endpoint-desc">Información de la API y lista de endpoints disponibles</div>
-        </div>
-
-        <div class="endpoint">
-            <div>
-                <span class="endpoint-method">GET</span>
-                <span class="endpoint-path"><a href="/api/labors">/api/labors</a></span>
-            </div>
-            <div class="endpoint-desc">Labores y actividades agrícolas realizadas en el campo</div>
-        </div>
-
-        <div class="endpoint">
-            <div>
-                <span class="endpoint-method">GET</span>
-                <span class="endpoint-path"><a href="/api/costs">/api/costs</a></span>
-            </div>
-            <div class="endpoint-desc">Registros de costos operacionales y gastos de producción</div>
-        </div>
-
-        <div class="endpoint">
-            <div>
-                <span class="endpoint-method">GET</span>
-                <span class="endpoint-path"><a href="/api/workers">/api/workers</a></span>
-            </div>
-            <div class="endpoint-desc">Información sobre personal y trabajadores del campo</div>
-        </div>
-
-        <div class="endpoint">
-            <div>
-                <span class="endpoint-method">GET</span>
-                <span class="endpoint-path"><a href="/api/crops">/api/crops</a></span>
-            </div>
-            <div class="endpoint-desc">Datos sobre cultivos, variedades y ciclos de producción</div>
-        </div>
-
-        <div class="endpoint">
-            <div>
-                <span class="endpoint-method">GET</span>
-                <span class="endpoint-path"><a href="/api/health">/api/health</a></span>
-            </div>
-            <div class="endpoint-desc">Estado del servidor y disponibilidad del API</div>
-        </div>
-    </main>
-
-    <footer>
-        <p>AgroMCP &copy; 2025 &middot; Open Source</p>
-    </footer>
-</body>
-</html>
-  `);
+app.get('/', (_req, res) => {
+  const htmlPath = path.join(__dirname, 'index.html');
+  const html = fs.readFileSync(htmlPath, 'utf-8');
+  res.send(html);
 });
 
 // Export for Vercel serverless

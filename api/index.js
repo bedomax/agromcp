@@ -41,7 +41,7 @@ app.get('/api', (_req, res) => {
 
 // Root endpoint - serve documentation
 app.get('/', (_req, res) => {
-  const htmlPath = path.join(__dirname, 'index.html');
+  const htmlPath = path.join(__dirname, '..', 'views', 'home.html');
   const html = fs.readFileSync(htmlPath, 'utf-8');
   res.send(html);
 });
